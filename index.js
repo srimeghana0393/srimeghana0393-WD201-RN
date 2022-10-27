@@ -38,11 +38,11 @@ http.createServer((request, response) => {
     let url = request.url;
     response.writeHeader(200, { "Content-Type": "text/html" });
     switch (url) {
-        case "/project":
+        case "/project.html":
             response.write(projectContent);
             response.end();
             break;
-        case "/reg":
+        case "/reg.html":
             response.write(regcontent);
             response.end();
             break;
