@@ -4,27 +4,27 @@ const fs = require("fs");
 let homeContent = "";
 let projectContent = "";
 
-fs.readFile("home.html", (err, home) => {
+fs.readFile("./home.html", (err, home) => {
     if (err) {
         throw err;
     }
     homeContent = home;
 });
 
-fs.readFile("project.html", (err, project) => {
+fs.readFile("./project.html", (err, project) => {
     if (err) {
         throw err;
     }
     projectContent = project;
 });
 
-fs.readFile("reg.html", (err, registration) => {
+fs.readFile("./reg.html", (err, registration) => {
     if (err) {
         throw err;
     }
     regcontent = registration;
 });
-fs.readFile("reg.js", (err, data) => {
+fs.readFile("./reg.js", (err, data) => {
     if (err) {
         throw err;
     }
@@ -37,7 +37,7 @@ let port = args.port;
 http.createServer((request, response) => {
     let url = request.url;
     response.writeHeader(200, { "Content-Type": "text/html" });
-    switch (url) {
+    switch(url){
         case "/project":
             response.write(projectContent);
             response.end();
