@@ -18,13 +18,13 @@ fs.readFile("./project.html", (err, project) => {
     projectContent = project;
 });
 
-fs.readFile("./reg.html", (err, registration) => {
+fs.readFile("./registration.html", (err, registration) => {
     if (err) {
         throw err;
     }
     regcontent = registration;
 });
-fs.readFile("./reg.js", (err, data) => {
+fs.readFile("./registration.js", (err, data) => {
     if (err) {
         throw err;
     }
@@ -42,11 +42,11 @@ http.createServer((request, response) => {
             response.write(projectContent);
             response.end();
             break;
-        case "/reg":
+        case "/registration":
             response.write(regcontent);
             response.end();
             break;
-        case "/reg.js":
+        case "/registration.js":
             response.writeHead(200, { "Content-Type": "text/javascript" });
             response.write(script);
             response.end();
